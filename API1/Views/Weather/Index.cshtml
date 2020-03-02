@@ -1,0 +1,17 @@
+﻿@model Weather
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+<!-- really want to find smallest length in these arrays-->
+
+@for (int i = 0; i < Model.Time.StartPeriodName.Length; i++)
+{
+    <p>
+        <h2>@Model.Time.StartPeriodName[i]</h2>
+        <img src="@Model.Data.Iconlink[i]" />
+        @Model.Data.Temperature[i]<br />
+        @Model.Data.Text[i]
+    </p>
+}
